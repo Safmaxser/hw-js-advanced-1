@@ -10,12 +10,10 @@ export function orderByProps(objData, sortList) {
       listProperties.push(new Property(key, objData[key]));
     }
   });
-  for (const key in objData) {
-    if (Object.prototype.hasOwnProperty.call(objData, key)) {
-      if (!sortList.includes(key)) {
-        listProperties.push(new Property(key, objData[key]));
-      }
+  Object.keys(objData).forEach(key => {
+    if (!sortList.includes(key)) {
+      listProperties.push(new Property(key, objData[key]));
     }
-  }
+  });
   return listProperties;
 }

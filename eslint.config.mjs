@@ -13,7 +13,7 @@ export default [
     }
   },
   {
-    ignores: ["dist/*"]
+    ignores: ["dist/*", "coverage/*"]
   },
   {
     files:["**/*.test.js"],
